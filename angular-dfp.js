@@ -43,6 +43,11 @@ angular.module('ngDfp', [])
     var collapseEmptyDivs = false;
 
     /**
+     Synchronous of Asynchronous rendering
+     */
+    var enableAsyncRendering = false;
+
+    /**
      This initializes the dfp script in the document. Loosely based on angular-re-captcha's
      method of loading the script with promises.
 
@@ -112,6 +117,16 @@ angular.module('ngDfp', [])
         }
 
         googletag.pubads().enableSingleRequest();
+
+        /**
+         If requested set to true asyncRendering
+         */
+        if(enableAsyncRendering) {
+          googletag.pubads().enableAsyncRendering();
+        } else {
+          googletag.pubads().enableSyncRendering();
+        }
+
         googletag.enableServices();
 
         googletag.pubads().addEventListener('slotRenderEnded', self._slotRenderEnded);
@@ -220,6 +235,11 @@ angular.module('ngDfp', [])
     this.collapseEmptyDivs = function () {
       collapseEmptyDivs = true;
     };
+
+    /**
+     set to true the enableAsyncRendering
+     */
+    enableAsyncRendering = true;
 
     // Public factory API.
     var self  = this;
