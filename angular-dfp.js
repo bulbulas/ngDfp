@@ -239,7 +239,9 @@ angular.module('ngDfp', [])
     /**
      set to true the enableAsyncRendering
      */
-    enableAsyncRendering = true;
+    this.enableAsyncRendering = function () {
+      enableAsyncRendering = true;
+    };
 
     // Public factory API.
     var self  = this;

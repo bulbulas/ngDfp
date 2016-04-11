@@ -59,7 +59,7 @@ Optionally, you can refresh an ad individually immediately or after a defined ti
 <div ng-dfp-ad="div-gpt-ad-1234567890123-0" ng-dfp-ad-refresh-timeout="{{refreshTimeout}}"></div>
 ```
 
-Hiding Emtpy Ads
+Hiding Empty Ads
 ----------------
 
 Ads can be hidden by adding the attribute `data-ng-dfp-ad-hide-when-empty` to the ad tag. You have to 
@@ -95,7 +95,7 @@ Minimizing
 
 Closure Compiler is used to minimize the code. It is minimized using this command
 
-    closure-compiler --js_output_file=angular-dfp.min.js --compilation_level SIMPLE angular-dfp.js
+    closure-compiler --js_output_file=angular-dfp.min.js --angular_pass angular-dfp.js
 
 Advanced optimizations are not used because as of now the AngularJS codebase does not support it.
 
